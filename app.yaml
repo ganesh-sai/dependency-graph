@@ -1,0 +1,14 @@
+---
+name: service-1
+version: v1
+kind: rest-service
+consumes:
+  services:
+  - name: service-2
+    version: v1
+    url:
+    - "/api/endpoint1"
+  - name: service-3
+    version: v1
+    url:
+    - "/api/endpoint2"

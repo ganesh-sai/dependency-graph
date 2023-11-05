@@ -1,0 +1,183 @@
+[
+    {
+      "name": "service-1",
+      "version": "v1",
+      "kind": "rest-service",
+      "consumes": {
+        "services": [
+          {
+            "name": "service-2",
+            "version": "v1",
+            "url": ["/api/endpoint1"]
+          },
+          {
+            "name": "service-3",
+            "version": "v1",
+            "url": ["/api/endpoint2"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "service-2",
+      "version": "v1",
+      "kind": "rest-service",
+      "consumes": {
+        "services": [
+          {
+            "name": "service-3",
+            "version": "v1",
+            "url": ["/api/endpoint1"]
+          },
+          {
+            "name": "service-4",
+            "version": "v1",
+            "url": ["/api/endpoint2"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "service-3",
+      "version": "v1",
+      "kind": "rest-service",
+      "consumes": {
+        "services": [
+          {
+            "name": "service-5",
+            "version": "v1",
+            "url": ["/api/endpoint1"]
+          },
+          {
+            "name": "service-6",
+            "version": "v1",
+            "url": ["/api/endpoint2"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "service-4",
+      "version": "v1",
+      "kind": "rest-service",
+      "consumes": {
+        "services": [
+          {
+            "name": "service-3",
+            "version": "v1",
+            "url": ["/api/endpoint1"]
+          },
+          {
+            "name": "service-7",
+            "version": "v1",
+            "url": ["/api/endpoint2"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "service-5",
+      "version": "v1",
+      "kind": "rest-service",
+      "consumes": {
+        "services": [
+          {
+            "name": "service-1",
+            "version": "v1",
+            "url": ["/api/endpoint1"]
+          },
+          {
+            "name": "service-8",
+            "version": "v1",
+            "url": ["/api/endpoint2"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "service-6",
+      "version": "v1",
+      "kind": "rest-service",
+      "consumes": {
+        "services": [
+          {
+            "name": "service-1",
+            "version": "v1",
+            "url": ["/api/endpoint1"]
+          },
+          {
+            "name": "service-9",
+            "version": "v1",
+            "url": ["/api/endpoint2"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "service-7",
+      "version": "v1",
+      "kind": "rest-service",
+      "consumes": {
+        "services": [
+          {
+            "name": "service-4",
+            "version": "v1",
+            "url": ["/api/endpoint1"]
+          },
+          {
+            "name": "service-10",
+            "version": "v1",
+            "url": ["/api/endpoint2"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "service-8",
+      "version": "v1",
+      "kind": "rest-service",
+      "consumes": {
+        "services": [
+          {
+            "name": "service-10",
+            "version": "v1",
+            "url": ["/api/endpoint1"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "service-9",
+      "version": "v1",
+      "kind": "rest-service",
+      "consumes": {
+        "services": [
+          {
+            "name": "service-10",
+            "version": "v1",
+            "url": ["/api/endpoint1"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "service-10",
+      "version": "v1",
+      "kind": "rest-service",
+      "consumes": {
+        "services": [
+          {
+            "name": "service-8",
+            "version": "v1",
+            "url": ["/api/endpoint1"]
+          },
+          {
+            "name": "service-9",
+            "version": "v1",
+            "url": ["/api/endpoint2"]
+          }
+        ]
+      }
+    }
+  ]
+  

@@ -1,0 +1,134 @@
+GET http://localhost:8080//services/service-10/v1  HTTP/1.1
+    Content-Type: application/json
+# Resposne: 
+# HTTP/1.1 200 OK
+# Content-Type: application/json
+# Date: Sun, 05 Nov 2023 18:37:56 GMT
+# Content-Length: 336
+# Connection: close
+
+# {
+#   "Name": "service-10",
+#   "Version": "v1",
+#   "Kind": "rest-service",
+#   "Consumes": {
+#     "Services": [
+#       {
+#         "Name": "service-8",
+#         "Version": "v1",
+#         "URL": [
+#           "/api/endpoint1"
+#         ]
+#       },
+#       {
+#         "Name": "service-9",
+#         "Version": "v1",
+#         "URL": [
+#           "/api/endpoint2"
+#         ]
+#       }
+#     ]
+#   },
+#   "calling_services": [
+#     {
+#       "name": "service-7",
+#       "version": "v1"
+#     },
+#     {
+#       "name": "service-8",
+#       "version": "v1"
+#     },
+#     {
+#       "name": "service-9",
+#       "version": "v1"
+#     }
+#   ]
+# }
+###
+
+POST http://localhost:8080/services HTTP/1.1
+ Content-Type: application/json
+ 
+ {
+  "name": "service-11",
+  "version": "v1",
+  "kind": "rest-service",
+  "consumes": {
+    "services": [
+      {
+        "name": "service-3",
+        "version": "v1",
+        "url": ["/api/endpoint3"]
+      },
+      {
+        "name": "service-6",
+        "version": "v1",
+        "url": ["/api/endpoint4"]
+      }
+    ]
+  }
+}
+###
+# HTTP/1.1 201 Created
+# Date: Sun, 05 Nov 2023 18:44:11 GMT
+# Content-Length: 15
+# Content-Type: text/plain; charset=utf-8
+# Connection: close
+
+# Service created
+###
+
+PUT http://localhost:8080/services/service-11/v1 HTTP/1.1
+ Content-Type: application/json
+ 
+ {
+  "name": "service-11",
+  "version": "v1",
+  "kind": "rest-service",
+  "consumes": {
+    "services": [
+      {
+        "name": "service-3",
+        "version": "v2",
+        "url": ["/api/endpoint3"]
+      },
+      {
+        "name": "service-6",
+        "version": "v1",
+        "url": ["/api/endpoint4"]
+      }
+    ]
+  }
+}
+#
+###
+# HTTP/1.1 200 OK
+# Date: Sun, 05 Nov 2023 18:45:42 GMT
+# Content-Length: 15
+# Content-Type: text/plain; charset=utf-8
+# Connection: close
+
+# Service updated
+###
+
+DELETE  http://localhost:8080/services/service-11/v1 HTTP/1.1
+
+### 
+# HTTP/1.1 200 OK
+# Date: Sun, 05 Nov 2023 18:48:50 GMT
+# Content-Length: 15
+# Content-Type: text/plain; charset=utf-8
+# Connection: close
+
+# Service deleted
+###
+DELETE  http://localhost:8080/services/service-1/v1 HTTP/1.1
+
+# HTTP/1.1 400 Bad Request
+# Content-Type: text/plain; charset=utf-8
+# X-Content-Type-Options: nosniff
+# Date: Sun, 05 Nov 2023 18:49:53 GMT
+# Content-Length: 80
+# Connection: close
+
+# Service is being consumed by other services. Use forceDelete=true to delete it.
